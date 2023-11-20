@@ -5,15 +5,17 @@ import funnyExcuse from 'funny-excuse'
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+const jester = require('jester-jokes');
 
 const app = express()
 const port = process.env.PORT || 3001
 
 const movieQuote = require("popular-movie-quotes");
+const joke = jester.getJoke();
 //console.log(movieQuote.getRandomQuote());
 
 app.get('/', (req, res) => {
-  res.send(`A really great movie quote: <u>${movieQuote.getRandomQuote()}</u>`)
+  res.send(`A really great movie quote: <u>${movieQuote.getRandomQuote()}</u><br> And a joke to go along with it: <u>${joke}</u>`)
 })
 
 // app.get('/', (req, res) => {
