@@ -1,25 +1,31 @@
 import express from 'express'
 import { sentence, paragraph } from 'txtgen'
 import fetch from 'node-fetch'
+import funnyExcuse from 'funny-excuse'
 
-// Create an instance of an express application 
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const app = express()
-
-// Set the port the application will be running on
 const port = process.env.PORT || 3001
 
-// Set up a response for the root path of the application
+const movieQuote = require("popular-movie-quotes");
+//console.log(movieQuote.getRandomQuote());
+
 app.get('/', (req, res) => {
-  fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur')
-  .then(response => response.json())
-  .then(bulbasaur =>{
-  res.send(bulbasaur.moves)
-})
+  res.send(`A really great movie quote: <u>${movieQuote.getRandomQuote()}</u>`)
 })
 
-// Set the application to listen a port
+// app.get('/', (req, res) => {
+//   fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur')
+//   .then(response => response.json())
+//   .then(bulbasaur =>{
+//   res.send(bulbasaur.moves)
+//   })
+// })
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}` )
+  console.log(`Example app listening on port ${port}`)
 })
 
 

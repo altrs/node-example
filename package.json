@@ -16,8 +16,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "funny-excuse": "^1.0.4",
+    "generate-dad-jokes": "^1.0.9",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.0.1",
+    "popular-movie-quotes": "^1.2.4",
     "txtgen": "^3.0.6"
   },
   "type": "module"
