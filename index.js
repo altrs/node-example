@@ -11,11 +11,11 @@ const app = express()
 const port = process.env.PORT || 3001
 
 const movieQuote = require("popular-movie-quotes");
-const joke = jester.getJoke();
+//const joke = jester.getJoke();
 //console.log(movieQuote.getRandomQuote());
 
 app.get('/', (req, res) => {
-  res.send(`A really great movie quote: <u>${movieQuote.getRandomQuote()}</u><br> And a joke to go along with it: <u>${joke}</u>`)
+  res.send(`A really great movie quote: <u>${movieQuote.getRandomQuote()}</u><br> And a joke to go along with it: <u>${jester.getJoke()}</u>`)
 })
 
 // app.get('/', (req, res) => {
