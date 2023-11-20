@@ -4,7 +4,9 @@
   "description": "this is a drawing app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js && say hello",
+    "develop": "nodemon index.js"
   },
   "keywords": [
     "drawing",
@@ -13,6 +15,9 @@
   "author": "robin",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "txtgen": "^3.0.6"
+  },
+  "type": "module"
 }

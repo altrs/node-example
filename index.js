@@ -1,4 +1,5 @@
 import express from 'express'
+import { sentence, paragraph } from 'txtgen'
 
 // Create an instance of an express application 
 const app = express()
@@ -8,7 +9,7 @@ const port = process.env.PORT || 3001
 
 // Set up a response for the root path of the application
 app.get('/', (req, res) => {
-  res.send("Write an instruction for a drawing here. For example: draw a line across the page, draw 10 circles of different sizes, draw a duck.")
+  res.send(paragraph([20]))
 })
 
 // Set the application to listen a port
